@@ -309,13 +309,13 @@ function Industries() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {industries.map((ind, i) => (
             <Reveal key={ind.name} delay={i * 0.04}>
-              <div className="group glass rounded-2xl p-6 flex items-center justify-between hover:bg-white/[0.06] transition">
+              <Link to={ind.to} className="group glass rounded-2xl p-6 flex items-center justify-between hover:bg-white/[0.06] transition">
                 <div className="flex items-center gap-3">
                   <ind.icon className="h-5 w-5 text-primary" />
                   <span className="font-display text-lg">{ind.name}</span>
                 </div>
                 <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:rotate-45 transition" />
-              </div>
+              </Link>
             </Reveal>
           ))}
         </div>
@@ -326,9 +326,9 @@ function Industries() {
 
 function Testimonials() {
   const items = [
-    { q: "Our booked jobs nearly doubled within a few months. The tracking finally tells us which channel pays for itself.", a: "HVAC operator", r: "Texas" },
-    { q: "Switched from a big agency. Same spend, way more leads — and we actually talk to the people running our ads.", a: "Plumbing owner", r: "Florida" },
-    { q: "New site loads fast, ranks in our service area and converts. Exactly what was promised.", a: "Electrical contractor", r: "Arizona" },
+    { q: "Ethixweb understood our requirements immediately and turned them into a professional, user-friendly website. The attention to detail was impressive.", a: "Emily Turner", r: "Client" },
+    { q: "Sharp, modern looking and has all the bells and whistles we need. Easy to work with, great communication, done efficiently. I'd highly recommend them!", a: "Kayla Kjl", r: "Client" },
+    { q: "Ethixweb delivered a clean, modern website that represents our brand perfectly. Professional, responsive, and completed on schedule.", a: "James Walker", r: "Client" },
   ];
   return (
     <section className="py-24 px-6">
