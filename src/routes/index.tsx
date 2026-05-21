@@ -9,6 +9,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
 import { Pricing } from "@/components/Pricing";
 import ethan from "@/assets/ethan.png";
+import { EthanScene } from "@/components/EthanScene";
 
 export const Route = createFileRoute("/")({
   head: () => ({
