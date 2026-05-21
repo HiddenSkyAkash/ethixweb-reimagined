@@ -109,10 +109,16 @@ export function EthanMascot() {
             onClick={() => setOpen((v) => !v)}
             aria-label="Chat with Ethan"
             className="relative h-20 w-20 sm:h-24 sm:w-24 rounded-full"
-            whileHover={{ scale: 1.08 }}
+            whileHover={{ scale: 1.08, rotate: -6 }}
             whileTap={{ scale: 0.94 }}
-            animate={{ y: [0, -8, 0] }}
-            transition={{ y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" } }}
+            animate={{
+              y: [0, -8, 0, -4, 0],
+              rotate: [0, 0, 0, -8, 6, -4, 0, 0],
+            }}
+            transition={{
+              y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
+              rotate: { duration: 7, repeat: Infinity, ease: "easeInOut", times: [0, 0.5, 0.7, 0.78, 0.84, 0.9, 0.96, 1] },
+            }}
           >
             <span className="absolute inset-0 rounded-full bg-primary/40 blur-2xl animate-pulse-glow" />
             <motion.div
@@ -120,6 +126,11 @@ export function EthanMascot() {
               className="relative h-full w-full rounded-full overflow-hidden ring-2 ring-primary/40 shadow-glow bg-gradient-brand"
             >
               <img src={ethan} alt="Ethan mascot" className="h-full w-full object-cover" />
+              <motion.span
+                className="absolute left-1/2 -translate-x-1/2 top-[34%] h-1 w-8 rounded-full bg-black/70 mix-blend-multiply"
+                animate={{ scaleY: [0, 0, 1, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, times: [0, 0.93, 0.97, 1] }}
+              />
             </motion.div>
             {!open && (
               <motion.span
