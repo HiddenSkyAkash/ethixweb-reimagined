@@ -188,36 +188,6 @@ export function EthanScene() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="relative will-change-transform"
           >
-            {/* Red rim — duplicate silhouette, blurred + red tint, offset right */}
-            <img
-              src={ethan}
-              alt=""
-              aria-hidden
-              className="absolute inset-0 max-h-[640px] w-auto select-none pointer-events-none"
-              style={{
-                filter:
-                  "blur(14px) brightness(0) saturate(100%) invert(28%) sepia(96%) saturate(7000%) hue-rotate(350deg)",
-                transform: "translate(14px, 0) scale(1.02)",
-                opacity: 0.85,
-                mixBlendMode: "screen",
-              }}
-              draggable={false}
-            />
-            {/* Blue rim — duplicate silhouette, blurred + blue tint, offset left */}
-            <img
-              src={ethan}
-              alt=""
-              aria-hidden
-              className="absolute inset-0 max-h-[640px] w-auto select-none pointer-events-none"
-              style={{
-                filter:
-                  "blur(16px) brightness(0) saturate(100%) invert(40%) sepia(85%) saturate(2500%) hue-rotate(200deg)",
-                transform: "translate(-14px, 4px) scale(1.02)",
-                opacity: 0.7,
-                mixBlendMode: "screen",
-              }}
-              draggable={false}
-            />
             {/* Main character */}
             <img
               src={ethan}
