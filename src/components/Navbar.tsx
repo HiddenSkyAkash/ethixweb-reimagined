@@ -3,6 +3,8 @@ import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Logo } from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
+import { TimezoneWidget } from "./TimezoneWidget";
 
 const links = [
   { to: "/", label: "Home" },
@@ -48,6 +50,8 @@ export function Navbar() {
             ))}
           </nav>
           <div className="hidden lg:flex items-center gap-3">
+            <TimezoneWidget />
+            <ThemeToggle />
             <Link
               to="/contact"
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-glow hover:scale-[1.03] transition-transform"
@@ -56,13 +60,16 @@ export function Navbar() {
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
             </Link>
           </div>
-          <button
-            className="lg:hidden p-2 rounded-lg glass"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Menu"
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              className="p-2 rounded-lg glass"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Menu"
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
         <AnimatePresence>
           {open && (
